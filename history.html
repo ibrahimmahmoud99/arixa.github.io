@@ -10,12 +10,130 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <title>ARIXA</title>
-    <link rel="stylesheet" href="styling.css">
+    <title>History</title>
+    <link rel="stylesheet" href="styling.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.14/lottie.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+<style>
+    /* The actual timeline (the vertical ruler) */
+.main-timeline {
+  position: relative;
+}
+
+/* The actual timeline (the vertical ruler) */
+.main-timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #939597;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.timeline {
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -13px;
+  background-color: #939597;
+  border: 5px solid #f5df4d;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  padding: 0px 40px 20px 0px;
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  padding: 0px 0px 20px 40px;
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  position: absolute;
+  top: 18px;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -12px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .main-timeline::after {
+    left: 31px;
+  }
+
+  /* Full-width containers */
+  .timeline {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .left::after,
+  .right::after {
+    left: 18px;
+  }
+
+  .left::before {
+    right: auto;
+  }
+
+  /* Make all right containers behave like the left ones */
+  .right {
+    left: 0%;
+  }
+}
+</style>
 </head>
 
 <body>
@@ -50,118 +168,77 @@
             </div>
         </div>
     </nav>
-    <section class="main container">
-        <div class="container mt-5 mb-5 align-items-center text-center" >
-            <div>
-                <h2 id="welcome-text">Welcome to Arixa <br><span>
-                        New Robotics World </span>
-                    </h2>
-                <h3>We build new future for the world</h3>
-                <a href="products.html" class="btn rounded-pill main-btn">Our Products</a>
-            </div>
+    <section style="background-color: #F0F2F5;">
+        <div class="container title">
+            <h1 class="title text-center">
+                Our History
+            </h1>
         </div>
-    </section>
-    <div class="stuff pt-5">
-        <div class="container">
-            <div class="main-title text-center mt-5 mb-5 position-relative">
-                <h2 class="title">
-                    Test the experience of ARIXA robot
-                </h2>
-                <p>
-                    Our Great project
-                </p>
-            </div>
-            <div class="row gif-place align-items-center">
-                <div class="container   col-lg-6 mb-4 text-center text-md-start ">
-                    <div class="text">
-                        <div class="mb-5">
-                            <h4 class="text-center gif-title " data-aos="fade-right">
-                                Introducing ARIXA
-                            </h4>
-                            <p class="text-black-50 gif-title fs-6 text-center" data-aos="fade-right">
-                                Every day life to enjoy your robotic experience
-                            </p>
-                        </div>
-                        <h4 class="text-center gif-title" data-aos="fade-right">
-                            Introducing ARIXA
-                        </h4>
-                        <p class="text-black-50 gif-title fs-6 text-center" data-aos="fade-right">
-                            Unlock features and explore the world of robotics.
-                        </p>
-                    </div>
+        <div class="container py-5">
+          <div class="main-timeline">
+            <div class="timeline left">
+              <div class="card" data-aos="fade-right">
+                <div class="card-body p-4" >
+                  <h3>2017</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
                 </div>
-                <div class="container-fluid col-lg-6 col-sm-12">
-                    <div class="gif">
-                        <video autoplay loop muted alt="robot-gif">
-                            <source src="/assets/ezgif.com-video-to-gif.mp4" type="video/mp4" >
-                        </video>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div class="timeline right">
+              <div class="card" data-aos="fade-left">
+                <div class="card-body p-4">
+                  <h3>2016</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline left">
+              <div class="card" data-aos="fade-right">
+                <div class="card-body p-4">
+                  <h3>2015</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline right">
+              <div class="card" data-aos="fade-left">
+                <div class="card-body p-4">
+                  <h3>2012</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline left">
+              <div class="card" data-aos="fade-right">
+                <div class="card-body p-4">
+                  <h3>2011</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+            <div class="timeline right">
+              <div class="card" data-aos="fade-left">
+                <div class="card-body p-4">
+                  <h3>2007</h3>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto
+                    mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua
+                    dignissim per, habeo iusto primis ea eam.</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="stuff pt-5">
-        <div class="container">
-            <div class="main-title text-center mt-5 mb-5 position-relative">
-                <h2 class="title">
-                    Test the experience of ARIXA robot
-                </h2>
-                <p>
-                    Our Great project
-                </p>
-            </div>
-            <p class="description text-center mt-5 mb-5 text-black-50 m-auto">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus fuga iste ut deserunt, enim autem
-                modi, porro dolores, est voluptatibus odio qui exercitationem. Facilis facere ab rem suscipit sint
-                obcaecati.
-            </p>
-
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="image">
-                        <img src="/Logo/image.png" width="50%" />
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4 text-center text-md-start">
-                    <div class="text">
-                        <h4>
-                            Introducing ARIXA
-                        </h4>
-                        <p class="text-black-50 fs-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellat quae voluptates
-                            alias harum laboriosam qui ipsa voluptate earum tempore in, amet voluptatibus perspiciatis
-                            debitis iste itaque. Culpa, doloribus odio?
-                        </p>
-                        <p class="text-black-50 fs-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, vel a. Ipsam doloribus
-                            distinctio nulla odit ipsa nostrum ex cumque, quaerat, sint libero dicta odio dolores
-                            tenetur ab ducimus ipsum.
-                        </p>
-                        <a class="btn rounded-pill main-btn text-uppercase" href="products.html">
-                            Learn More
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <section class="home-page-robotics">
-        <div class="container">
-            <div class="row">
-                <div class="home-page-robotics-text container">
-                    <h2>Arixa Robotics</h2>
-                    <p>
-                        Robotics is a sub-field of artificial intelligence (AI) that focuses on the design,
-                        manufacturing, and implementation of robots. Robots can perform a variety of tasks, including
-                        automating manual tasks, executing dangerous or repetitive tasks, assisting with
-                        decision-making, and engaging in entertainment.
-                    </p>
-                    <a class="btn rounded-pill main-btn text-uppercase" href="aboutus.html">About Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
+      </section>
     <div class="footer pt-5 pb-5 text-white-50 text-center text-md-start">
         <div class="container">
             <div class="row">
@@ -241,53 +318,9 @@
             </div>
         </div>
     </div>
-    <script src="index.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-        AOS.init();
-    </script>
-    <script>
-        var animationContainer = document.getElementById('animation-container');
-        var animation = lottie.loadAnimation({
-            container: animationContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'cycling.json'
-        });
-
-        var lastScrollTop = 0;
-        var isScrollTriggered = false;
-        var scrollTimeout;
-
-        animation.setSpeed(0); // initialize animation speed to 0
-
-        window.addEventListener('scroll', function () {
-            clearTimeout(scrollTimeout); // clear any previous timeout
-
-            var st = window.pageYOffset || document.documentElement.scrollTop;
-            var delta = st - lastScrollTop;
-            var speed = Math.abs(delta / 10);
-
-            if (!isScrollTriggered) {
-                animation.setSpeed(speed);
-                animation.setDirection(delta > 0 ? 1 : -1);
-                isScrollTriggered = true;
-            } else {
-                animation.setSpeed(speed);
-                animation.setDirection(delta > 0 ? 1 : -1);
-            }
-
-            lastScrollTop = st;
-
-            // if the user stops scrolling, reset the animation after a short delay
-            scrollTimeout = setTimeout(resetAnimation, 100);
-        });
-
-        function resetAnimation() {
-            animation.setSpeed(0); // stop the animation
-            isScrollTriggered = false; // reset the scroll trigger status
-        }
+        AOS.init()
     </script>
 </body>
 
